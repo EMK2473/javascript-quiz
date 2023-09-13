@@ -1,69 +1,75 @@
 :root {
-    --black: #333333;
-    --white: #ffffff;
-    --marg-sec: 8px;
-    --pad-sec: 10px;
+  --black: #333333;
+  --white: #ffffff;
+  --green: #2eff04;
+  --gray: #7d7c7c;
+  --marg-sec: 8px;
+  --pad-sec: 10px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 main {
-    display: flex;
-    flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 
-body{
-    font-family: monospace;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--black);
-    color: var(--white);
+body {
+  font-family: monospace;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  color: var(--green);
 }
 
 header {
-    border-radius: 50px;
-    margin: var(--marg-sec);
-    padding: var(--pad-sec);
+  border-radius: 50px;
+  margin: var(--marg-sec);
+  padding: var(--pad-sec);
 }
 
-#navbar { 
-    display: flex;
-    justify-content: space-between;
+#navbar {
+  display: flex;
+  justify-content: space-between;
 }
 
-#timer{
-    padding-right: 10px;
-    margin-right: 10px;
+#timer {
+  padding-right: 10px;
+  margin-right: 10px;
 }
 
-#quiz-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: inherit;
-    border-style: solid;
-    border-width: 2px;
-
+#quizSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: inherit;
+  border-style: solid;
+  border-width: 2px;
+  pad: var(--pad-sec);
+  margin: var(--marg-sec);
 }
 
-#quiz-section h1{
-    
+#questionArea {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border: solid;
+  height: 500px;
+  width: 750px;
 }
 
-#question-area{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding: 20px;
-    border: solid;
-    height: 500px;
-    width: 750px;
+
+#questions{
+  color: var(--gray);
 }
 
-#q1{
+#answers{
+  color: var(--green);
 
 }
