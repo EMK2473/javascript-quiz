@@ -16,12 +16,16 @@
     </header>
     <section class="qSection" id="quizSection">
       <h1>JavaScript Quiz Challenge</h1>
-      <button onclick="start()" id="startBtn">Start.</button>
+      <button onclick="startQuestions()" id="startBtn">Start.</button>
       <section id="questionArea">
+        <!-- target "questions" here to append questions -->
         <div class="questions" id="quest"> </div>
-        <div class="answers" id="ans"></div>
+        <div class="answers" id="answer"></div>
         <div id="score"></div>
+        <!-- figure out how to make this do both or just combine one -->
+        <button onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">Next.</button>
       </section>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
