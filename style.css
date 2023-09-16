@@ -99,7 +99,6 @@ button {
   color: var(--green);
   margin: var(--marg-sec);
   padding: var(--pad-sec);
-  /* position: fixed; */
 }
 
 
