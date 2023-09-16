@@ -54,6 +54,7 @@ startBut.addEventListener("click", function () {
 function showScore() {
   let totalScore = document.getElementById("score");
   totalScore.textContent = `You scored ${score, + secondsLeft} points`;
+  document.getElementById("timer").remove();
 }
 function nextQuestion() {
   if (currentQuest < Questions.length - 1) {
@@ -87,6 +88,7 @@ function checkAnswer() {
   );
   if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {
     score++;
+    secondsLeft += 11;
     nextQuestion();
   } else {
     secondsLeft -= 10;
@@ -105,3 +107,4 @@ function startTimer() {
     }
   }, 1000);
 }
+
