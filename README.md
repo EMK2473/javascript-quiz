@@ -14,4 +14,4 @@ GitHub Repo Link: https://github.com/EMK2473/javascript-quiz/
 Deployed Link: https://emk2473.github.io/javascript-quiz/
 
 
-![JavaScript Screenshot](./assets/JS%20Quiz%20Screenshot%20.jpg)
+![JavaScript Screenshot](./assets/JSquizSS.jpg)
