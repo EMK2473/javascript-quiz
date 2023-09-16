@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>JavaScript Quiz</title>
   </head>
@@ -11,20 +11,27 @@
     <header>
       <nav id="navbar">
         <h2 id="highScore">View Highscores</h2>
-        <span id="timer">60</span>
+        <span id="timer">Timer</span>
       </nav>
     </header>
     <section class="qSection" id="quizSection">
       <h1>JavaScript Quiz Challenge</h1>
-      <button onclick="startQuestions()" id="startBtn">Start.</button>
       <section id="questionArea">
-        <!-- target "questions" here to append questions -->
+        <button onclick="startQuestions()" id="startBtn">Start.</button>
         <div class="questions" id="quest"> </div>
         <div class="answers" id="answer"></div>
         <div id="score"></div>
-        <!-- figure out how to make this do both or just combine one -->
-        <button onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">Next.</button>
-      </section>
+        <button style="display: none" onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">Next.</button>
+        <button style="display: none" onclick="tryAgain()" id="tryAgainBtn">Try Again?</button>
+        <button style="display: none" onclick="viewHS()" id="highscoreBtn">Submit & View High Scores</button>
+        <div class="highScoreLog" style="display: none" id="hsLog">
+          <h1>High Scores:</h1>
+          <form id="hsLOG" method="POST">
+            <label for="hs-text">Submit High Score: </label>
+            <input type="text" placeholder="Your Initials Here:" name="initals" id="hsText" />
+          </form>
+          <ul id="hsList"></ul>
+        </div>
     </section>
     <script src="script.js"></script>
   </body>

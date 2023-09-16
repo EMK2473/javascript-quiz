@@ -72,13 +72,13 @@ button {
 	font-size: 20px;
 	padding: 10px 20px;
   margin-bottom: 10px;
-	background-color: var(--gray);
+	background-color: var(--black);
 	color: var(--green);
 	border: solid;
 	cursor: pointer;
 }
 #nextBut {
-    margin-top: 200px;
+    margin-top: 50px;
     font-size: 20px;
     background-color: var(--black);
     color: var(--green);
@@ -99,6 +99,31 @@ button {
   color: var(--green);
   margin: var(--marg-sec);
   padding: var(--pad-sec);
-  position: fixed;
+  /* position: fixed; */
 }
 
+
+#score{
+  font-size: larger;
+  color: var(--white);
+}
+
+#tryAgainBtn{
+  margin-top: 50px;
+  color: var(--white);
+  background-color: var(--green);
+}
+
+#highscoreBtn{
+  margin-top: 50px;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.highscoreLog {
+  display: block;
+  background-color:var(--black);
+  border: 1px solid var(--green);
+  margin: 60px;
+  padding: 20px;
+}
