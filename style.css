@@ -2,7 +2,7 @@
   --black: #000000;
   --white: #ffffff;
   --green: #2eff04;
-  --gray: #454545;
+  --gray: #2e2e2e;
   --marg-sec: 8px;
   --pad-sec: 10px;
 }
@@ -37,7 +37,7 @@ header {
 }
 
 #timer {
-  font-size: 200%;
+  font-size: 300%;
   padding-right: 10px;
   margin-right: 10px;
 }
@@ -94,13 +94,15 @@ button {
 }
 
 #quest{
-  font-size: 25px;
+  margin: var(--marg-sec);
+  padding: var(--pad-sec);
+  font-size: 20px;
   text-decoration: underline;
-  text-decoration-color: var(--white);
+  text-decoration-color: var(--black);
 }
 
 .answers{
-  font-size: small;
+  font-size: 15px;
   display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 20px;
@@ -109,6 +111,10 @@ button {
   padding: var(--pad-sec);
 }
 
+#answer{
+  text-decoration: underline;
+  text-decoration-color: var(--white);
+}
 
 #score{
   font-size: larger;

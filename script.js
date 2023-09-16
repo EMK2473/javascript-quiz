@@ -1,6 +1,6 @@
 const Questions = [
   {
-    q: "Which HTML element do we put JavaScript inside of?",
+    q: "In which HTML element do we put JavaScript inside of?",
     a: [
       { text: "<js>", isCorrect: false },
       { text: "<javascript>", isCorrect: false },
@@ -9,16 +9,16 @@ const Questions = [
     ],
   },
   {
-    q: "What does JS stand for?",
+    q: "What does 'JS' stand for?",
     a: [
-      { text: "jumbo smoothie", isCorrect: false },
+      { text: "Jumbo Smoothie", isCorrect: false },
       { text: "Java Smoothie", isCorrect: false },
       { text: "JavaScript", isCorrect: true },
       { text: "Jamocha Shake", isCorrect: false },
     ],
   },
   {
-    q: "How to write 'Hello World' in an alert box?",
+    q: "How do you properly write an alert saying:'Hello World'?",
     a: [
       { text: "alert('Hello World')", isCorrect: true },
       { text: "msgBox('Hello World')", isCorrect: false },
@@ -27,7 +27,7 @@ const Questions = [
     ],
   },
   {
-    q: "How do you write a function in JavaScript?",
+    q: "How do you properly write a function in JavaScript?",
     a: [
       { text: "function = myFunction()", isCorrect: false },
       { text: "function:myFunction()", isCorrect: false },
