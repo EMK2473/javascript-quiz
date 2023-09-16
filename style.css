@@ -73,3 +73,7 @@ header {
   color: var(--green);
 
 }
+
+#startBtn{
+  cursor: pointer;
+}
