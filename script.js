@@ -9,7 +9,7 @@ const Questions = [
     ],
   },
   {
-    q: "What does JS stand for",
+    q: "What does JS stand for?",
     a: [
       { text: "jumbo smoothie", isCorrect: false },
       { text: "Java Smoothie", isCorrect: false },

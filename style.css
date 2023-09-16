@@ -37,6 +37,7 @@ header {
 }
 
 #timer {
+  font-size: 200%;
   padding-right: 10px;
   margin-right: 10px;
 }
@@ -87,8 +88,15 @@ button {
   }
 
 .questions{
+  font-size: 200%;
   color: var(--green);
   font-size: medium ;
+}
+
+#quest{
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: var(--white);
 }
 
 .answers{
