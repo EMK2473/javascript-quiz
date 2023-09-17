@@ -35,34 +35,32 @@ const Questions = [
       { text: "FUNCTION:", isCorrect: false },
     ],
   },
-  "muahaha i apparently need this to not skip q#1 in my array"
+  "muahaha i apparently need this to not skip q#1 in my array",
   // please give feedback on how I could fix this?
 ];
-let currentQuest = 0; 
-let currentScore = 0; 
-let secondsLeft = 10; 
+let currentQuest = 0;
+let currentScore = 0;
+let secondsLeft = 10;
 let startBut = document.querySelector("#startBtn");
-let nextBut = document.querySelector("#nextBut")
-
+let nextBut = document.querySelector("#nextBut");
 function startQuestions() {
   startTimer();
   nextQuestion();
-  startBut.style.display = 'none';
-  nextBut.style.display = 'block';
+  startBut.style.display = "none";
+  nextBut.style.display = "block";
 }
 startBut.addEventListener("click", function () {
-  if ((currentQuest == 0)) {
+  if (currentQuest == 0) {
     startQuestions();
   }
 });
 function showScore() {
   let totalScore = document.getElementById("score");
-  totalScore.textContent = `You scored ${score, + secondsLeft} points`;
+  totalScore.textContent = `You scored ${(score, +secondsLeft)} points`;
   document.getElementById("timer").remove();
   document.getElementById("tryAgainBtn").style.display = "block";
   document.getElementById("highscoreBtn").style.display = "block";
 }
-
 function nextQuestion() {
   if (currentQuest < Questions.length - 1) {
     let question = document.getElementById("quest");
@@ -115,26 +113,22 @@ function startTimer() {
     }
   }, 1000);
 }
-
-function tryAgain(){
-  location.reload()
+function tryAgain() {
+  location.reload();
 }
 
 
-
-
+// ***********
 // need to implement how to store and render High Scores
-function viewHS(){
+function viewHS() {
   document.getElementById("highscoreBtn").style.display = "none";
   document.getElementById("score").style.display = "none";
   document.getElementById("hsLog").style.display = "block";
 }
-
 let hsInput = document.querySelector("#hsText");
 let hsForm = document.querySelector("#hsLog");
 let hsList = document.querySelector("#hsList");
-let hScores = []
-
+let hScores = [];
 function renderHS() {
   hsList.innerHTML = "";
   for (let i = 0; i < hScores.length; i++) {
@@ -155,28 +149,19 @@ function initStorage() {
   }
   renderHS();
 }
-
 function storeHS() {
   localStorage.setItem("hScores", JSON.stringify(hScores));
 }
-
-// Add submit event to form
-hsForm.addEventListener("submit", function(event) {
+hsForm.addEventListener("submit", function (event) {
   event.preventDefault();
-
   let hsText = hsInput.value.trim();
-
-  if (hsText === "") {
-    return;
-  }
+  if (hsText === "") {return;}
   hScores.push(hsText);
   hsInputInput.value = "";
-
   storeHS();
   renderHS();
 });
-
-hsList.addEventListener("click", function(event) {
+hsList.addEventListener("click", function (event) {
   let element = event.target;
   if (element.matches("button") === true) {
     let index = element.parentElement.getAttribute("data-index");
@@ -185,5 +170,4 @@ hsList.addEventListener("click", function(event) {
     renderHS();
   }
 });
-
-initStorage()
+initStorage();
