@@ -35,7 +35,7 @@ const Questions = [
       { text: "function", isCorrect: true},
     ],
   },
-  "i apparently need this to avoid skipping q#1 in my array. please give me feedback on why?",
+  "i apparently need this to avoid skipping a question in my array. please give me feedback on why?"
   // // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
@@ -147,7 +147,7 @@ function renderHS() {
   for (let i = 0; i < hScores.length; i++) {
     let hScore = hScores[i];
     let li = document.createElement("li");
-    li.textContent = `Score: ${hScore.score}, Timestamp: ${hScore.timestamp} Initials: ${hScore.initials}`;
+    li.textContent = `${hScore.initials}: Score: ${hScore.score}, ${hScore.timestamp}`;
     li.setAttribute("data-index", i);
     let button = document.createElement("button");
     button.textContent = "clear()";
@@ -167,9 +167,7 @@ function initStorage() {
 function storeHS() {
   localStorage.setItem("hScores", JSON.stringify(hScores));
 }
-// store initials?
-// push initials?
-// change hsText to initialText
+
 hsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let hsText = hsInput.value.trim();
