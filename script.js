@@ -27,11 +27,11 @@ const Questions = [
     ],
   },
   {
-    q: "How do you properly write a function in JavaScript?",
+    q: "How do you properly define a function in JavaScript?",
     a: [
       { text: "function = myFunction()", isCorrect: false },
       { text: "function:myFunction()", isCorrect: false },
-      { text: "function myFunction", isCorrect: true },
+      { text: "function myFunction()", isCorrect: true },
       { text: "FUNCTION:", isCorrect: false },
     ],
   },
