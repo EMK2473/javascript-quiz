@@ -1,6 +1,6 @@
-# javascript-quiz
-Challenge 4: JavaScript Quiz
-Description: This JavaScript Quiz is designed to test your knowledge through 4 trivial questions.
+# JavaScript - Quiz
+## Challenge 4: JavaScript Quiz
+### Description: This JavaScript Quiz is designed to test your knowledge through 4 trivial questions.
 
 You will be given 10 seconds to answer the first question. If you get that question right, you will be given more time for the next question. If you get that question wrong, it will deduct 10 seconds from the timer. 
 

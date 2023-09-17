@@ -35,7 +35,7 @@ const Questions = [
       { text: "FUNCTION:", isCorrect: false },
     ],
   },
-  "muahaha i apparently need this to not skip q#1 in my array",
+  "muahaha i apparently need this to not skip q#1 in my array. please give me feedback on why?",
   // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
@@ -129,6 +129,7 @@ let hsInput = document.querySelector("#hsText");
 let hsForm = document.querySelector("#hsLog");
 let hsList = document.querySelector("#hsList");
 let hScores = [];
+
 function renderHS() {
   hsList.innerHTML = "";
   for (let i = 0; i < hScores.length; i++) {
@@ -142,6 +143,7 @@ function renderHS() {
     hsList.appendChild(li);
   }
 }
+
 function initStorage() {
   let storedHighScores = JSON.parse(localStorage.getItem("hScores"));
   if (storedHighScores !== null) {
@@ -149,6 +151,7 @@ function initStorage() {
   }
   renderHS();
 }
+
 function storeHS() {
   localStorage.setItem("hScores", JSON.stringify(hScores));
 }
