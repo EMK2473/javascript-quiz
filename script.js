@@ -36,7 +36,7 @@ const Questions = [
     ],
   },
   "i apparently need this to avoid skipping q#1 in my array. please give me feedback on why?",
-  // please give feedback on how I could fix this?
+  // // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
 let currentScore = 0;
@@ -44,7 +44,7 @@ let secondsLeft = 10;
 let startBut = document.querySelector("#startBtn");
 let nextBut = document.querySelector("#nextBut");
 let instructions = document.querySelector("#instructions");
-
+let timerInterval;
 function startQuestions() {
   startTimer();
   nextQuestion();
@@ -59,29 +59,21 @@ startBut.addEventListener("click", function () {
 });
 function showScore() {
   let totalScore = document.getElementById("score");
-  const scoreObject = {
-    score: secondsLeft,
-    timestamp: new Date().toLocaleString(),
-  };
-  hScores.push(scoreObject);
-  storeHS();
-  renderHS();
   totalScore.textContent = `let score = ${secondsLeft};`;
   document.getElementById("timer").remove();
   document.getElementById("tryAgainBtn").style.display = "block";
   document.getElementById("highScoreBtn").style.display = "block";
-  if(secondsLeft == 100){
+  if (secondsLeft == 100) {
     document.getElementById("perfection").style.display = "block";
   }
-  if(secondsLeft <= 0){
+  if (secondsLeft <= 0) {
     document.getElementById("youLose").style.display = "block";
   }
-  if(secondsLeft >= 95
-    &&
-    secondsLeft <= 99){
-    document.getElementById("possible").style.display = "block";
-  } 
+  if (secondsLeft >= 95 && secondsLeft <= 99) 
+  {document.getElementById("possible").style.display = "block";} 
+  clearInterval(timerInterval);
 }
+
 function nextQuestion() {
   if (currentQuest < Questions.length - 1) {
     let question = document.getElementById("quest");
@@ -108,6 +100,7 @@ function nextQuestion() {
     showScore();
   }
 }
+
 function checkAnswer() {
   let chosenAnswer = parseInt(
     document.querySelector('input[name="answer"]:checked').value
@@ -115,13 +108,12 @@ function checkAnswer() {
   if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {
     secondsLeft += 23.25;
     nextQuestion();
-  } else {
-    secondsLeft -= 74.5;
-    nextQuestion();
+  } else { secondsLeft -= 74.5; nextQuestion();
   }
+
 }
 function startTimer() {
-  let timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     document.querySelector("#timer").textContent = secondsLeft;
     if (secondsLeft <= 0) {
@@ -133,6 +125,7 @@ function startTimer() {
     }
   }, 1000);
 }
+
 function tryAgain() {
   location.reload();
 }
@@ -154,7 +147,7 @@ function renderHS() {
   for (let i = 0; i < hScores.length; i++) {
     let hScore = hScores[i];
     let li = document.createElement("li");
-    li.textContent = `Score: ${hScore.score}, Timestamp: ${hScore.timestamp}`;
+    li.textContent = `Score: ${hScore.score}, Timestamp: ${hScore.timestamp} Initials: ${hScore.initials}`;
     li.setAttribute("data-index", i);
     let button = document.createElement("button");
     button.textContent = "clear()";
@@ -163,12 +156,12 @@ function renderHS() {
   }
 }
 
+
 function initStorage() {
   let storedHighScores = JSON.parse(localStorage.getItem("hScores"));
   if (storedHighScores !== null) {
     hScores = storedHighScores;
   }
-  renderHS();
 }
 
 function storeHS() {
@@ -176,17 +169,23 @@ function storeHS() {
 }
 // store initials?
 // push initials?
-
+// change hsText to initialText
 hsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let hsText = hsInput.value.trim();
   if (hsText === "") {
     return;
   }
-  hScores.push(hsText);
   hsInput.value = "";
+  const scoreObject = {
+    score: secondsLeft,
+    timestamp: new Date().toLocaleString(),
+    initials: hsText,
+  };
+  hScores.push(scoreObject);
   storeHS();
   renderHS();
+  console.log(hsText)
 });
 
 hsList.addEventListener("click", function (event) {
@@ -199,3 +198,4 @@ hsList.addEventListener("click", function (event) {
   }
 });
 initStorage();
+
