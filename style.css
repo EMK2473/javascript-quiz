@@ -31,15 +31,20 @@ header {
   padding: var(--pad-sec);
 }
 
+
 #navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #timer {
   font-size: 300%;
   padding-right: 10px;
   margin-right: 10px;
+}
+
+q{
+  text-wrap: nowrap;
 }
 
 #quizSection {
@@ -60,7 +65,6 @@ header {
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   background-color: var(--gray);
   margin-bottom: 50px;
@@ -101,7 +105,6 @@ li::after {
 }
 
 #nextBut {
-    margin-top: 50px;
     font-size: 20px;
     background-color: var(--black);
     color: var(--green);
@@ -110,7 +113,6 @@ li::after {
   }
 
 .questions{
-  font-size: 200%;
   color: var(--green);
   font-size: medium ;
 }
@@ -118,9 +120,8 @@ li::after {
 #quest{
   margin: var(--marg-sec);
   padding: var(--pad-sec);
-  font-size: 20px;
-  text-decoration: underline;
-  text-decoration-color: var(--black);
+  font-size: 30px;
+  margin: 30px;
 }
 
 .answers{
@@ -134,18 +135,18 @@ li::after {
 }
 
 #score{
+  margin: 25px;
   font-size: larger;
   color: var(--white);
 }
 
 #tryAgainBtn{
-  margin: 10px;
-  color: var(--white);
+  margin: 25px;
+  color: var(--black);
   background-color: var(--green);
 }
 
 #highscoreBtn{
-  margin-top: 50px;
   color: var(--white);
   background-color: var(--black);
 }
@@ -158,10 +159,18 @@ li::after {
   padding: 20px;
 }
 
-#hsLog{
-  /* margin: 150px; */
-}
-
 #hsList{
   margin-right: 20px ;
+}
+
+#perfection{
+  margin-bottom: 40px;
+}
+
+#youLose{
+  margin-bottom: 40px;
+}
+
+#instructions{
+  margin: 20px;
 }

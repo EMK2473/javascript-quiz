@@ -1,41 +1,41 @@
 const Questions = [
   {
-    q: "In which HTML element do we put JavaScript inside of?",
+    q: "Which file type contains JavaScript?",
     a: [
-      { text: "<js>", isCorrect: false },
-      { text: "<javascript>", isCorrect: false },
-      { text: "<scripting>", isCorrect: false },
-      { text: "<script>", isCorrect: true },
+      { text: "script.js", isCorrect: true },
+      { text: "README.md", isCorrect: false },
+      { text: "index.html", isCorrect: false },
+      { text: "style.css", isCorrect: false },
     ],
   },
   {
-    q: "What does 'JS' stand for?",
+    q: "What does 'js' stand for in 'script.js'?",
     a: [
-      { text: "Jumbo Smoothie", isCorrect: false },
-      { text: "Java Smoothie", isCorrect: false },
-      { text: "JavaScript", isCorrect: true },
+      { text: "Jumbo Shrimp", isCorrect: false },
       { text: "Jamocha Shake", isCorrect: false },
+      { text: "JavaScript", isCorrect: true },
+      { text: "Just Salsa", isCorrect: false },
     ],
   },
   {
-    q: "How do you properly write an alert saying:'Hello World'?",
+    q: "Teenage Mutant Ninja Turtle method to ____ pizza?",
     a: [
-      { text: "alert('Hello World')", isCorrect: true },
-      { text: "msgBox('Hello World')", isCorrect: false },
-      { text: "alertBox('Hello World')", isCorrect: false },
-      { text: "msg('Hello World')", isCorrect: false },
+      { text: ".partydude", isCorrect: false },
+      { text: ".slice", isCorrect: true },
+      { text: ".splice", isCorrect: false },
+      { text: ".cowabunga", isCorrect: false },
     ],
   },
   {
-    q: "How do you properly define a function in JavaScript?",
+    q: "Conjunction, junction, what's your... ?",
     a: [
-      { text: "function = myFunction()", isCorrect: false },
-      { text: "function:myFunction()", isCorrect: false },
-      { text: "function myFunction()", isCorrect: true },
-      { text: "FUNCTION:", isCorrect: false },
+      { text: "if", isCorrect: false },
+      { text: "else", isCorrect: false },
+      { text: "for", isCorrect: false},
+      { text: "function", isCorrect: true},
     ],
   },
-  "muahaha i apparently need this to not skip q#1 in my array. please give me feedback on why?",
+  "i apparently need this to avoid skipping q#1 in my array. please give me feedback on why?",
   // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
@@ -43,12 +43,14 @@ let currentScore = 0;
 let secondsLeft = 10;
 let startBut = document.querySelector("#startBtn");
 let nextBut = document.querySelector("#nextBut");
+let instructions = document.querySelector("#instructions")
 
 function startQuestions() {
   startTimer();
   nextQuestion();
   startBut.style.display = "none";
   nextBut.style.display = "block";
+  instructions.style.display= "none";
 }
 startBut.addEventListener("click", function () {
   if (currentQuest == 0) {
@@ -57,10 +59,21 @@ startBut.addEventListener("click", function () {
 });
 function showScore() {
   let totalScore = document.getElementById("score");
-  totalScore.textContent = `You scored ${(secondsLeft)} points`;
+  totalScore.textContent = `let score = ${secondsLeft};`;
   document.getElementById("timer").remove();
   document.getElementById("tryAgainBtn").style.display = "block";
   document.getElementById("highScoreBtn").style.display = "block";
+  if(secondsLeft == 100){
+    document.getElementById("perfection").style.display = "block";
+  }
+  if(secondsLeft <= 0){
+    document.getElementById("youLose").style.display = "block";
+  }
+  if(secondsLeft >= 97
+    &&
+    secondsLeft <= 99){
+    document.getElementById("possible").style.display = "block";
+  } 
 }
 function nextQuestion() {
   if (currentQuest < Questions.length - 1) {
@@ -92,11 +105,11 @@ function checkAnswer() {
   let chosenAnswer = parseInt(
     document.querySelector('input[name="answer"]:checked').value
   );
-  if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {  
-    secondsLeft += 24;
+  if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {
+    secondsLeft += 23.25;
     nextQuestion();
   } else {
-    secondsLeft -= 10;
+    secondsLeft -= 24.5;
     nextQuestion();
   }
 }
@@ -117,7 +130,6 @@ function tryAgain() {
   location.reload();
 }
 
-
 // ***********
 // need to implement how to store and render High Scores
 function viewHS() {
@@ -131,7 +143,6 @@ let hsForm = document.querySelector("#hsForm");
 let hsList = document.querySelector("#hsList");
 let hScores = [];
 
-
 // append secondsLeft into hScore
 function renderHS() {
   hsList.innerHTML = "";
@@ -141,7 +152,7 @@ function renderHS() {
     li.textContent = hScore;
     li.setAttribute("data-index", i);
     let button = document.createElement("button");
-    button.textContent = "Clear";
+    button.textContent = "clear()";
     li.appendChild(button);
     hsList.appendChild(li);
   }
@@ -161,7 +172,9 @@ function storeHS() {
 hsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let hsText = hsInput.value.trim();
-  if (hsText === "") {return;}
+  if (hsText === "") {
+    return;
+  }
   hScores.push(hsText);
   hsInput.value = "";
   storeHS();

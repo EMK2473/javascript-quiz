@@ -10,26 +10,52 @@
   <body>
     <header>
       <nav id="navbar">
-        <h2 id="highScore">View Highscores</h2>
-        <span id="timer">Timer</span>
+        <span id="timer">function timer()</span>
       </nav>
     </header>
     <section class="qSection" id="quizSection">
-      <h1>JavaScript Quiz Challenge</h1>
+      <h1>let this = javaScriptQuiz</h1>
       <section id="questionArea">
-        <button onclick="startQuestions()" id="startBtn">Start.</button>
+        <div id="instructions" style="display: block;">
+          <p>function instructions()
+          <br>
+          let time = 10;
+          <br>
+          let score === time;
+          <br>
+          if (answer.isCorrect)
+          <br>
+          {time + moreTime} 
+          <br>
+          else
+          <br>
+          {time - lessTime};
+          <br>
+          if (time <= 0)
+          <br>
+          {youLose()}
+          <br>
+          if(score === 100)
+          <br>
+          {perfection()}
+          </p>
+        </div>
+        <button onclick="startQuestions()" id="startBtn">start()</button>
         <div class="questions" id="quest"> </div>
         <div class="answers" id="answer"></div>
+        <div style="display: none;" id="perfection">perfection()</div>
+        <div style="display: none;" id="youLose">youLose()</div>
+        <div style="display: none;" id="possible">let perfection = possible;</div>
         <div id="score"></div>
-        <button style="display: none" onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">Next.</button>
-        <button style="display: none" onclick="tryAgain()" id="tryAgainBtn">Try Again?</button>
-        <button style="display: none" onclick="viewHS()" id="highScoreBtn">Submit & View High Scores</button>
+        <button style="display: none" onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">next()</button>
+        <button style="display: none" onclick="tryAgain()" id="tryAgainBtn">tryAgain()</button>
+        <button style="display: none" onclick="viewHS()" id="highScoreBtn">highScores()</button>
         <div class="highScoreLog" style="display: none" id="hsLog">
           <form id="hsForm" method="POST">
-            <label for="hs-Text">Submit High Score: </label>
-            <input type="text" placeholder="Your Initials Here:" name="initals" id="hsText" />
+            <label for="hs-Text">submit()</label>
+            <input type="text" placeholder="input.initials" name="initals" id="hsText" />
           </form>
-          <h1>High Scores:</h1>
+          <h1>let highScores = </h1>
           <ul id="hsList"></ul>
         </div>
     </section>

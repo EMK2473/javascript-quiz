@@ -2,11 +2,17 @@
 ## Challenge 4: JavaScript Quiz
 ### Description: This JavaScript Quiz is designed to test your knowledge through 4 trivial questions.
 
-You will be given 10 seconds to answer the first question. If you get that question right, you will be given more time for the next question. If you get that question wrong, it will deduct 10 seconds from the timer. 
+    You will be given 10 seconds to answer the first question. 
+    
+    If you get that question right, you will be given more time. 
+    
+    If you get that question wrong, you will lose time. 
 
-If you run out of time, you will lose; and your score will be a reflected by the time left on the timer.
+    If you run out of time, you lose.
 
-Try to get a score of 100!
+    Your score will equal your time.
+
+    Try to get a perfect score of 100! (it is possible!)
 
 
 GitHub Repo Link: https://github.com/EMK2473/javascript-quiz/
@@ -14,4 +20,4 @@ GitHub Repo Link: https://github.com/EMK2473/javascript-quiz/
 Deployed Link: https://emk2473.github.io/javascript-quiz/
 
 
-![JavaScript Screenshot](./assets/JSquizSS.jpg)
+![JavaScript Screenshot](./assets/javaScriptQuizScreenShot.jpg)
