@@ -179,6 +179,7 @@ li::after {
 }
 
 #instructions{
+  padding-top: 100px;
   margin: 20px;
 }
 
