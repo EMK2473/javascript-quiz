@@ -43,6 +43,7 @@ let currentScore = 0;
 let secondsLeft = 10;
 let startBut = document.querySelector("#startBtn");
 let nextBut = document.querySelector("#nextBut");
+
 function startQuestions() {
   startTimer();
   nextQuestion();
@@ -56,10 +57,10 @@ startBut.addEventListener("click", function () {
 });
 function showScore() {
   let totalScore = document.getElementById("score");
-  totalScore.textContent = `You scored ${(score, +secondsLeft)} points`;
+  totalScore.textContent = `You scored ${(secondsLeft)} points`;
   document.getElementById("timer").remove();
   document.getElementById("tryAgainBtn").style.display = "block";
-  document.getElementById("highscoreBtn").style.display = "block";
+  document.getElementById("highScoreBtn").style.display = "block";
 }
 function nextQuestion() {
   if (currentQuest < Questions.length - 1) {
@@ -91,8 +92,7 @@ function checkAnswer() {
   let chosenAnswer = parseInt(
     document.querySelector('input[name="answer"]:checked').value
   );
-  if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {
-    score++;
+  if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {  
     secondsLeft += 24;
     nextQuestion();
   } else {
@@ -121,24 +121,27 @@ function tryAgain() {
 // ***********
 // need to implement how to store and render High Scores
 function viewHS() {
-  document.getElementById("highscoreBtn").style.display = "none";
+  document.getElementById("highScoreBtn").style.display = "none";
   document.getElementById("score").style.display = "none";
   document.getElementById("hsLog").style.display = "block";
 }
+
 let hsInput = document.querySelector("#hsText");
-let hsForm = document.querySelector("#hsLog");
+let hsForm = document.querySelector("#hsForm");
 let hsList = document.querySelector("#hsList");
 let hScores = [];
 
+
+// append secondsLeft into hScore
 function renderHS() {
   hsList.innerHTML = "";
   for (let i = 0; i < hScores.length; i++) {
-    let hScore = hScore[i];
+    let hScore = hScores[i];
     let li = document.createElement("li");
     li.textContent = hScore;
     li.setAttribute("data-index", i);
     let button = document.createElement("button");
-    button.textContent = "Clear High Score";
+    button.textContent = "Clear";
     li.appendChild(button);
     hsList.appendChild(li);
   }
@@ -160,7 +163,7 @@ hsForm.addEventListener("submit", function (event) {
   let hsText = hsInput.value.trim();
   if (hsText === "") {return;}
   hScores.push(hsText);
-  hsInputInput.value = "";
+  hsInput.value = "";
   storeHS();
   renderHS();
 });

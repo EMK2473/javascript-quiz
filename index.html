@@ -23,13 +23,13 @@
         <div id="score"></div>
         <button style="display: none" onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">Next.</button>
         <button style="display: none" onclick="tryAgain()" id="tryAgainBtn">Try Again?</button>
-        <button style="display: none" onclick="viewHS()" id="highscoreBtn">Submit & View High Scores</button>
+        <button style="display: none" onclick="viewHS()" id="highScoreBtn">Submit & View High Scores</button>
         <div class="highScoreLog" style="display: none" id="hsLog">
-          <h1>High Scores:</h1>
-          <form id="hsLOG" method="POST">
-            <label for="hs-text">Submit High Score: </label>
+          <form id="hsForm" method="POST">
+            <label for="hs-Text">Submit High Score: </label>
             <input type="text" placeholder="Your Initials Here:" name="initals" id="hsText" />
           </form>
+          <h1>High Scores:</h1>
           <ul id="hsList"></ul>
         </div>
     </section>
