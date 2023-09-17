@@ -151,16 +151,23 @@ li::after {
   background-color: var(--black);
 }
 
+#hsLog{
+  margin: 10px;
+  width: 100%;
+}
+
 .highScoreLog {
   display: block;
   background-color:var(--black);
   border: 1px solid var(--green);
-  margin: 60px;
+  margin: 20px;
   padding: 20px;
 }
 
 #hsList{
   margin-right: 20px ;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 #perfection{
@@ -168,9 +175,13 @@ li::after {
 }
 
 #youLose{
-  margin-bottom: 40px;
+  margin-top: 100px;
 }
 
 #instructions{
   margin: 20px;
+}
+
+#possible{
+  margin-top: 100px;
 }

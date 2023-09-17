@@ -43,7 +43,7 @@ let currentScore = 0;
 let secondsLeft = 10;
 let startBut = document.querySelector("#startBtn");
 let nextBut = document.querySelector("#nextBut");
-let instructions = document.querySelector("#instructions")
+let instructions = document.querySelector("#instructions");
 
 function startQuestions() {
   startTimer();
@@ -59,6 +59,13 @@ startBut.addEventListener("click", function () {
 });
 function showScore() {
   let totalScore = document.getElementById("score");
+  const scoreObject = {
+    score: secondsLeft,
+    timestamp: new Date().toLocaleString(),
+  };
+  hScores.push(scoreObject);
+  storeHS();
+  renderHS();
   totalScore.textContent = `let score = ${secondsLeft};`;
   document.getElementById("timer").remove();
   document.getElementById("tryAgainBtn").style.display = "block";
@@ -130,8 +137,6 @@ function tryAgain() {
   location.reload();
 }
 
-// ***********
-// need to implement how to store and render High Scores
 function viewHS() {
   document.getElementById("highScoreBtn").style.display = "none";
   document.getElementById("score").style.display = "none";
@@ -143,13 +148,13 @@ let hsForm = document.querySelector("#hsForm");
 let hsList = document.querySelector("#hsList");
 let hScores = [];
 
-// append secondsLeft into hScore
+// store and append initial input into hScore somehow
 function renderHS() {
   hsList.innerHTML = "";
   for (let i = 0; i < hScores.length; i++) {
     let hScore = hScores[i];
     let li = document.createElement("li");
-    li.textContent = hScore;
+    li.textContent = `Score: ${hScore.score}, Timestamp: ${hScore.timestamp}`;
     li.setAttribute("data-index", i);
     let button = document.createElement("button");
     button.textContent = "clear()";
@@ -169,6 +174,9 @@ function initStorage() {
 function storeHS() {
   localStorage.setItem("hScores", JSON.stringify(hScores));
 }
+// store initials?
+// push initials?
+
 hsForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let hsText = hsInput.value.trim();
@@ -180,6 +188,7 @@ hsForm.addEventListener("submit", function (event) {
   storeHS();
   renderHS();
 });
+
 hsList.addEventListener("click", function (event) {
   let element = event.target;
   if (element.matches("button") === true) {
