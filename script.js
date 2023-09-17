@@ -69,7 +69,7 @@ function showScore() {
   if(secondsLeft <= 0){
     document.getElementById("youLose").style.display = "block";
   }
-  if(secondsLeft >= 97
+  if(secondsLeft >= 95
     &&
     secondsLeft <= 99){
     document.getElementById("possible").style.display = "block";
@@ -109,7 +109,7 @@ function checkAnswer() {
     secondsLeft += 23.25;
     nextQuestion();
   } else {
-    secondsLeft -= 24.5;
+    secondsLeft -= 74.5;
     nextQuestion();
   }
 }
