@@ -1,24 +1,24 @@
 const Questions = [
   {
-    q: "Which file type contains JavaScript?",
+    q: "What does learning JavaScript require?",
     a: [
-      { text: "script.js", isCorrect: true },
-      { text: "README.md", isCorrect: false },
-      { text: "index.html", isCorrect: false },
-      { text: "style.css", isCorrect: false },
+      { text: "time and patience", isCorrect: true },
+      { text: "the best computer", isCorrect: false },
+      { text: "being a certain type of person", isCorrect: false },
+      { text: "money", isCorrect: false },
     ],
   },
   {
-    q: "What does 'js' stand for in 'script.js'?",
+    q: "What happens the more you practice JavaScript'?",
     a: [
-      { text: "Jumbo Shrimp", isCorrect: false },
-      { text: "Jamocha Shake", isCorrect: false },
-      { text: "JavaScript", isCorrect: true },
-      { text: "Just Salsa", isCorrect: false },
+      { text: "you become more tired", isCorrect: false },
+      { text: "you become more hungry", isCorrect: false },
+      { text: "you become better at it", isCorrect: true },
+      { text: "you being to dream about code", isCorrect: false },
     ],
   },
   {
-    q: "Teenage Mutant Ninja Turtle method to ____ pizza?",
+    q: "The Teenage Mutant Ninja Turtle method to ____ pizza?",
     a: [
       { text: ".partydude", isCorrect: false },
       { text: ".slice", isCorrect: true },
