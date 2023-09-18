@@ -2,7 +2,7 @@
 
 ## Challenge 4: JavaScript Quiz
 
-### Description: This JavaScript Quiz is designed to test your knowledge and speed.
+### Description: This JavaScript Game Quiz is designed to test your speed and knowledge. Use time wisely.
 
     You will be given 10 seconds to answer the first question.
 
