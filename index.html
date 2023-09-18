@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>JavaScript Quiz</title>
+    <title>jsGameQuiz</title>
   </head>
   <body>
     <header>
       <nav id="navbar">
-        <span id="timer">function timer()</span>
+        <span id="timer">function timer(event)</span>
       </nav>
     </header>
     <section class="qSection" id="quizSection">
-      <h1>let this = javaScriptQuiz</h1>
+      <h1>let this = jsGameQuiz</h1>
       <section id="questionArea">
         <div id="instructions" style="display: block;">
           <p>function start()
@@ -37,15 +37,15 @@
           <br>
           if(score === 100)
           <br>
-          {perfection()}
+          {perfect()}
           </p>
         </div>
         <button onclick="startQuestions()" id="startBtn">start()</button>
         <div class="questions" id="quest"> </div>
         <div class="answers" id="answer"></div>
-        <div style="display: none;" id="perfection">perfection()</div>
+        <div style="display: none;" id="perfect">perfect()</div>
         <div style="display: none;" id="youLose">youLose()</div>
-        <div style="display: none;" id="possible">let perfection = possible;</div>
+        <div style="display: none;" id="possible">let perfect = possible;</div>
         <div id="score"></div>
         <button style="display: none" onclick="checkAnswer()" onclick="nextQuestion()" id="nextBut">next()</button>
         <button style="display: none" onclick="tryAgain()" id="tryAgainBtn">tryAgain()</button>

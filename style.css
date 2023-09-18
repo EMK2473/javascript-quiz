@@ -31,7 +31,6 @@ header {
   padding: var(--pad-sec);
 }
 
-
 #navbar {
   display: flex;
   justify-content: center;
@@ -43,7 +42,7 @@ header {
   margin-right: 10px;
 }
 
-q{
+q {
   text-wrap: nowrap;
 }
 
@@ -74,13 +73,13 @@ q{
 }
 
 button {
-	font-size: 20px;
-	padding: 10px 20px;
+  font-size: 20px;
+  padding: 10px 20px;
   margin-bottom: 10px;
-	background-color: var(--black);
-	color: var(--green);
-	border: solid;
-	cursor: pointer;
+  background-color: var(--black);
+  color: var(--green);
+  border: solid;
+  cursor: pointer;
 }
 li button {
   float: right;
@@ -105,84 +104,84 @@ li::after {
 }
 
 #nextBut {
-    font-size: 20px;
-    background-color: var(--black);
-    color: var(--green);
-    border: solid;
-    cursor: pointer;
-  }
-
-.questions{
+  font-size: 20px;
+  background-color: var(--black);
   color: var(--green);
-  font-size: medium ;
+  border: solid;
+  cursor: pointer;
 }
 
-#quest{
+.questions {
+  color: var(--green);
+  font-size: medium;
+}
+
+#quest {
   margin: var(--marg-sec);
   padding: var(--pad-sec);
   font-size: 30px;
   margin: 30px;
 }
 
-.answers{
+.answers {
   font-size: 15px;
   display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
   color: var(--green);
   margin: var(--marg-sec);
   padding: var(--pad-sec);
 }
 
-#score{
+#score {
   margin: 25px;
   font-size: larger;
   color: var(--white);
 }
 
-#tryAgainBtn{
+#tryAgainBtn {
   margin: 25px;
   color: var(--black);
   background-color: var(--green);
 }
 
-#highscoreBtn{
+#highscoreBtn {
   color: var(--white);
   background-color: var(--black);
 }
 
-#hsLog{
+#hsLog {
   margin: 10px;
   width: 100%;
 }
 
 .highScoreLog {
   display: block;
-  background-color:var(--black);
+  background-color: var(--black);
   border: 1px solid var(--green);
   margin: 20px;
   padding: 20px;
 }
 
-#hsList{
-  margin-right: 20px ;
+#hsList {
+  margin-right: 20px;
   max-height: 200px;
   overflow-y: auto;
 }
 
-#perfection{
+#perfection {
   margin-top: 100px;
 }
 
-#youLose{
+#youLose {
   margin-top: 100px;
 }
 
-#instructions{
+#instructions {
   padding-top: 100px;
   margin: 20px;
 }
 
-#possible{
+#possible {
   margin-top: 100px;
 }

@@ -31,11 +31,11 @@ const Questions = [
     a: [
       { text: "if", isCorrect: false },
       { text: "else", isCorrect: false },
-      { text: "for", isCorrect: false},
-      { text: "function", isCorrect: true},
+      { text: "for", isCorrect: false },
+      { text: "function", isCorrect: true },
     ],
   },
-  "i apparently need this to avoid skipping a question in my array. please give me feedback on why?"
+  "i apparently need this to avoid skipping a question in my array. please give me feedback on why?",
   // // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
@@ -50,7 +50,7 @@ function startQuestions() {
   nextQuestion();
   startBut.style.display = "none";
   nextBut.style.display = "block";
-  instructions.style.display= "none";
+  instructions.style.display = "none";
 }
 startBut.addEventListener("click", function () {
   if (currentQuest == 0) {
@@ -64,13 +64,14 @@ function showScore() {
   document.getElementById("tryAgainBtn").style.display = "block";
   document.getElementById("highScoreBtn").style.display = "block";
   if (secondsLeft == 100) {
-    document.getElementById("perfection").style.display = "block";
+    document.getElementById("perfect").style.display = "block";
   }
   if (secondsLeft <= 0) {
     document.getElementById("youLose").style.display = "block";
   }
-  if (secondsLeft >= 95 && secondsLeft <= 99) 
-  {document.getElementById("possible").style.display = "block";} 
+  if (secondsLeft >= 95 && secondsLeft <= 99) {
+    document.getElementById("possible").style.display = "block";
+  }
   clearInterval(timerInterval);
 }
 
@@ -108,9 +109,10 @@ function checkAnswer() {
   if (Questions[currentQuest - 1].a[chosenAnswer].isCorrect) {
     secondsLeft += 23.25;
     nextQuestion();
-  } else { secondsLeft -= 74.5; nextQuestion();
+  } else {
+    secondsLeft -= 74.5;
+    nextQuestion();
   }
-
 }
 function startTimer() {
   timerInterval = setInterval(function () {
@@ -156,7 +158,6 @@ function renderHS() {
   }
 }
 
-
 function initStorage() {
   let storedHighScores = JSON.parse(localStorage.getItem("hScores"));
   if (storedHighScores !== null) {
@@ -183,7 +184,7 @@ hsForm.addEventListener("submit", function (event) {
   hScores.push(scoreObject);
   storeHS();
   renderHS();
-  console.log(hsText)
+  console.log(hsText);
 });
 
 hsList.addEventListener("click", function (event) {
@@ -196,4 +197,3 @@ hsList.addEventListener("click", function (event) {
   }
 });
 initStorage();
-
