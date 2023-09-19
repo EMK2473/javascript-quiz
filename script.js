@@ -11,10 +11,10 @@ const Questions = [
   {
     q: "What happens the more you practice JavaScript'?",
     a: [
-      { text: "you become more tired", isCorrect: false },
-      { text: "you become more hungry", isCorrect: false },
-      { text: "you become better at it", isCorrect: true },
-      { text: "you being to dream about code", isCorrect: false },
+      { text: "you become tired", isCorrect: false },
+      { text: "you become hungry", isCorrect: false },
+      { text: "you get better at it", isCorrect: true },
+      { text: "you dream about code", isCorrect: false },
     ],
   },
   {
@@ -35,8 +35,6 @@ const Questions = [
       { text: "function", isCorrect: true },
     ],
   },
-  "i apparently need this to avoid skipping a question in my array. please give me feedback on why?",
-  // // please give feedback on how I could fix this?
 ];
 let currentQuest = 0;
 let currentScore = 0;
@@ -76,7 +74,7 @@ function showScore() {
 }
 
 function nextQuestion() {
-  if (currentQuest < Questions.length - 1) {
+  if (currentQuest <= Questions.length - 1) {
     let question = document.getElementById("quest");
     let answers = document.getElementById("answer");
     question.textContent = Questions[currentQuest].q;
